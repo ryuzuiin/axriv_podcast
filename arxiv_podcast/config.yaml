@@ -1,0 +1,29 @@
+# ===============================
+# arxiv_podcast 配置文件（中文版本）
+# ===============================
+
+search:
+  query: "time series deep learning"
+  max_results: 5
+  categories: ["cs.LG", "stat.ML"]  # 可选类别列表，例如：cs.AI, cs.CL
+  sort_by: "submittedDate"          # 可选值: relevance, lastUpdatedDate, submittedDate
+  sort_order: "descending"          # 可选值: ascending, descending
+
+openai:
+  api_key: "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"
+  model: "gpt-3.5-turbo"  # 或 "gpt-3.5-turbo"
+  system_prompt: >
+    你是一名擅长解读前沿人工智能论文的研究员。请根据以下论文的标题和摘要，从以下四个方面进行总结：
+    
+    1. 研究背景与目的  
+    2. 方法或技术要点  
+    3. 实验结果或发现  
+    4. 潜在应用场景  
+
+    请用简洁清晰的中文表述，控制在500字以内，适合没有专业背景的听众理解。
+  output_format: "markdown"  # 可选值: text / markdown / bullet
+
+azure_tts:
+  use_azure_tts: true
+  voice: "zh-CN-XiaoxiaoNeural"
+  output_dir: "outputs/audio"
